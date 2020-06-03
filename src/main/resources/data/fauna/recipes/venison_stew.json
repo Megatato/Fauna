@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "fauna:cooked_venison"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        },
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "item": "minecraft:carrot"
+        }
+    ],
+    "result": {
+        "item": "fauna:venison_stew",
+        "count": 1
+    }
+}

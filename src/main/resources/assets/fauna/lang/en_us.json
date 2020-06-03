@@ -1,0 +1,12 @@
+{
+    "itemGroup.fauna.seeds": "Seeds",
+    
+    "item.fauna.venison": "Raw Venison",
+    "item.fauna.cooked_venison": "Cooked Venison",
+    "item.fauna.venison_stew": "Venison Stew",
+    "item.fauna.venison_stew.tooltip_1": "",
+    "item.fauna.venison_stew.tooltip_2": "(Not to be confused with Venetian stew.)",
+    "item.fauna.acorn": "Acorn",
+
+    "item.fauna.deer_spawn_egg": "Deer Spawn Egg"
+}
