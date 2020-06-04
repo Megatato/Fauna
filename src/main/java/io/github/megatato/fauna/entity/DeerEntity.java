@@ -5,6 +5,9 @@ import java.util.Random;
 import io.github.megatato.fauna.FaunaEntityType;
 import io.github.megatato.fauna.Univar;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.HorseBaseEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -14,21 +17,28 @@ import net.minecraft.world.World;
 
 public class DeerEntity extends HorseBaseEntity {
 
-    protected Boolean gender;
+    protected static final TrackedData<Boolean> GENDER;
 
     public DeerEntity(EntityType<? extends DeerEntity> entityType, World world) {
         super(entityType, world);
-        this.gender = Univar.FEMALE;
-        /* currently need to figure out how to allow for different
-        specimens of the deer species to have different genders */
+        /* need to figure out how to have spawn egg produce male and/or female deer */
+    }
+
+    protected void initDataTracker(){
+        super.initDataTracker();
+        this.dataTracker.startTracking(GENDER, Univar.FEMALE);
+    }
+
+    static {
+        GENDER = DataTracker.registerData(DeerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     }
 
     public Boolean getGender(){
-        return gender;
+        return (Boolean)this.dataTracker.get(GENDER);
     }
 
     public void setGender(Boolean gender){
-        this.gender = gender;
+        this.dataTracker.set(GENDER, gender);
     }
 
 	@Override
@@ -38,12 +48,17 @@ public class DeerEntity extends HorseBaseEntity {
         
         ;
 
-        if(new Random().nextInt(1) == 1){
+        Double rand = new Random().nextDouble();
+        //System.out.println("rand: " + rand); //rand value output; for debug.
+
+        if(rand >= 0.5){
             child.setGender(Univar.MALE);
+            //System.out.println("Child is Male!");
         }
         else{
-            child.setGender(Univar.MALE);
-        }
+            child.setGender(Univar.FEMALE);
+            //System.out.println("Child is Female!");
+        }    
 
 		return child;
     }

@@ -13,7 +13,7 @@ public class FaunaEntityType {
         Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(Univar.MODID, "deer"),
-            FabricEntityTypeBuilder.create(EntityCategory.AMBIENT, (EntityType.EntityFactory<DeerEntity>)DeerEntity::new).size(EntityDimensions.fixed(2.2f, 1.2f)).build()
+            FabricEntityTypeBuilder.create(EntityCategory.CREATURE, DeerEntity::new).size(EntityDimensions.fixed(2.2f, 1.2f)).build()
         )
     ;
 }
