@@ -1,13 +1,8 @@
 package io.github.megatato.fauna.entity;
 
-import java.util.Random;
-
 import io.github.megatato.fauna.FaunaEntityType;
 import io.github.megatato.fauna.Univar;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.HorseBaseEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -15,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
-public class DeerEntity extends HorseBaseEntity {
+public class DeerEntity extends AnimalEntity {
     public DeerEntity(EntityType<? extends DeerEntity> entityType, World world) {
         super(entityType, world);
         /* need to figure out how to have spawn egg produce male and/or female deer */
