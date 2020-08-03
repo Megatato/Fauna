@@ -15,10 +15,7 @@ public class DeerEntityRenderer extends MobEntityRenderer<DeerEntity, HorseEntit
 
     @Override
     public Identifier getTexture(DeerEntity entity) {
-        String id = Univar.MODID + ":textures/entity/deer/";
-
-        if(entity.getGender() == Univar.MALE) id += "buck.png";
-        else id += "doe.png";
+        String id = Univar.MODID + ":textures/entity/deer/doe.png";
 
         return new Identifier(id);
     }

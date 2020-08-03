@@ -16,9 +16,6 @@ import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
 public class DeerEntity extends HorseBaseEntity {
-
-    protected static final TrackedData<Boolean> GENDER;
-
     public DeerEntity(EntityType<? extends DeerEntity> entityType, World world) {
         super(entityType, world);
         /* need to figure out how to have spawn egg produce male and/or female deer */
@@ -26,39 +23,14 @@ public class DeerEntity extends HorseBaseEntity {
 
     protected void initDataTracker(){
         super.initDataTracker();
-        this.dataTracker.startTracking(GENDER, Univar.FEMALE);
     }
 
     static {
-        GENDER = DataTracker.registerData(DeerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    }
-
-    public Boolean getGender(){
-        return (Boolean)this.dataTracker.get(GENDER);
-    }
-
-    public void setGender(Boolean gender){
-        this.dataTracker.set(GENDER, gender);
     }
 
 	@Override
 	public PassiveEntity createChild(PassiveEntity mate) {
-        DeerEntity 
-        child = (DeerEntity)FaunaEntityType.DEER.create(this.world)
-        
-        ;
-
-        Double rand = new Random().nextDouble();
-        //System.out.println("rand: " + rand); //rand value output; for debug.
-
-        if(rand >= 0.5){
-            child.setGender(Univar.MALE);
-            //System.out.println("Child is Male!");
-        }
-        else{
-            child.setGender(Univar.FEMALE);
-            //System.out.println("Child is Female!");
-        }    
+        DeerEntity child = (DeerEntity)FaunaEntityType.DEER.create(this.world);   
 
 		return child;
     }
