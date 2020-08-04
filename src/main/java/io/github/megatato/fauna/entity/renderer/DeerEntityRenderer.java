@@ -5,7 +5,6 @@ import io.github.megatato.fauna.entity.DeerEntity;
 import io.github.megatato.fauna.entity.model.DeerEntityModel;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.render.entity.model.HorseEntityModel;
 import net.minecraft.util.Identifier;
 
 public class DeerEntityRenderer extends MobEntityRenderer<DeerEntity, DeerEntityModel<DeerEntity>> {
@@ -16,7 +15,7 @@ public class DeerEntityRenderer extends MobEntityRenderer<DeerEntity, DeerEntity
 
     @Override
     public Identifier getTexture(DeerEntity entity) {
-        String id = Univar.MODID + ":textures/entity/deer/doe2.png";
+        String id = Univar.MODID + ":textures/entity/deer/doe_n.png";
 
         return new Identifier(id);
     }
