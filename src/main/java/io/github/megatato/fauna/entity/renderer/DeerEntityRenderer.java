@@ -15,9 +15,9 @@ public class DeerEntityRenderer extends MobEntityRenderer<DeerEntity, DeerEntity
 
     @Override
     public Identifier getTexture(DeerEntity entity) {
-        String id = Univar.MODID + ":textures/entity/deer/doe_n.png";
+        String id = "textures/entity/deer/doe.png";
 
-        return new Identifier(id);
+        return new Identifier(Univar.MODID, id);
     }
     
 }
