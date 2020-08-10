@@ -5,6 +5,7 @@ import io.github.megatato.fauna.FaunaItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AnimalMateGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.ItemStack;
@@ -21,8 +22,9 @@ public class DeerEntity extends AnimalEntity {
     }
 
     protected void initGoals(){
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D, DeerEntity.class));
-        this.goalSelector.add(1, new LookAroundGoal(this));
+        this.goalSelector.add(1, new AnimalMateGoal(this, 1.0D, DeerEntity.class));
+        this.goalSelector.add(3, new LookAroundGoal(this));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.5D));
         //this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 7, 0.25, 0.75));
     }
 

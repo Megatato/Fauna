@@ -18,7 +18,7 @@ public class DeerEntityModel<T extends DeerEntity> extends AnimalModel<T> {
     ;
 
     public DeerEntityModel() {
-        super(true, 0, 0, -1, -1, -1);
+        super(true, 0, 0, 1, 1, 1);
 
         this.textureWidth = 52;
         this.textureHeight = 39;
